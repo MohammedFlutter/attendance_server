@@ -1,15 +1,15 @@
 
 import 'package:attendance_server/domain/attendance.dart';
 
-class Subject {
+class Course {
   final String title ;
 
   final List<Attendance> Attendances;
 
-  Subject._(this.title, this.Attendances);
-  factory Subject (Map<String, dynamic> json){
+  Course._(this.title, this.Attendances);
+  factory Course.fromJson (Map<String, dynamic> json){
     var temp= json['Attendances'] as List<Map<String,dynamic>>;
-    return Subject._(json['title'], temp.map((e) => Attendance.fromJson(e)).toList() );
+    return Course._(json['title'], temp.map((e) => Attendance.fromJson(e)).toList() );
   }
   Map<String ,dynamic> toJson(){
     return {
