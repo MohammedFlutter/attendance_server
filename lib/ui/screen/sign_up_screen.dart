@@ -1,5 +1,6 @@
 import 'package:attendance_server/provider/teacher.dart';
 import 'package:attendance_server/ui/screen/home_screen.dart';
+import 'package:attendance_server/ui/screen/teacher_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -53,7 +54,7 @@ class _SignupScreenState extends State<SignupScreen> {
       context.read<TeacherProvider>().setName(controllerName.text);
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (_) => const HomeScreen()),
+        MaterialPageRoute(builder: (_) => const TeacherScreen()),
         (route) => false,
       );
     }
