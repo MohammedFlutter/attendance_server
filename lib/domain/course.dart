@@ -4,9 +4,9 @@ import 'package:attendance_server/domain/attendance.dart';
 class Course {
   final String title ;
 
-  final List<Attendance> Attendances;
+  final List<Attendance> attendances;
 
-  Course(this.title, [this.Attendances=const []]);
+  Course(this.title, this.attendances);
   factory Course.fromJson (Map<String, dynamic> json){
     var temp= json['Attendances'] as List<Map<String,dynamic>>;
     return Course(json['title'], temp.map((e) => Attendance.fromJson(e)).toList() );
@@ -14,7 +14,7 @@ class Course {
   Map<String ,dynamic> toJson(){
     return {
       'title':title,
-      'Attendances':Attendances.map((e) => e.toJson()).toList(),
+      'Attendances':attendances.map((e) => e.toJson()).toList(),
     };
   }
 }

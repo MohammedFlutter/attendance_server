@@ -10,7 +10,7 @@ class TeacherProvider extends ChangeNotifier{
    }
 
    setName(String name ){
-    _teacher =Teacher(name);
+    _teacher =Teacher(name,[]);
     notifyListeners();
   }
 
@@ -19,7 +19,7 @@ class TeacherProvider extends ChangeNotifier{
    Teacher get teacher => _teacher!;
 
    addCourse(String courseTitle){
-    _teacher?.courses.add(Course(courseTitle));
+    _teacher?.courses.add(Course(courseTitle,[]));
     notifyListeners();
   }
 
