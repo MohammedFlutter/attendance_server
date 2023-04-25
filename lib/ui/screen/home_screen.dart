@@ -10,19 +10,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body:Center(child: Column(children: [
-        Text(context.watch<ServerProvider>().serverState.toString()),
-        ElevatedButton(onPressed: context.read<ServerProvider>().start, child: Text('Start')),
-        ElevatedButton(onPressed: context.read<ServerProvider>().close, child: Text('Stop')),
-
-      ],)) ,
-      
+      body: Center(
+          child: Column(
+        children: [
+          Text(context.watch<ServerProvider>().serverState.toString()),
+          ElevatedButton(
+              onPressed: context.read<ServerProvider>().start,
+              child: Text('Start')),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+              onPressed: context.read<ServerProvider>().close,
+              child: Text('Stop')),
+        ],
+      )),
     );
   }
 }

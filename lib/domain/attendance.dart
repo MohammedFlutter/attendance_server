@@ -5,10 +5,10 @@ class Attendance {
 
   final List<Student> students;
 
-  Attendance._(this.history, this.students);
+  Attendance(this.history,this.students);
   factory Attendance.fromJson (Map<String, dynamic> json){
     var temp= json['students'] as List<Map<String,dynamic>>;
-    return Attendance._(json['history'], temp.map((e) => Student.fromJson(e)).toList());
+    return Attendance(json['history'], temp.map((e) => Student.fromJson(e)).toList());
   }
   Map<String ,dynamic> toJson(){
     return {

@@ -1,14 +1,19 @@
 import 'package:attendance_server/provider/server.dart';
+import 'package:attendance_server/provider/teacher.dart';
 import 'package:attendance_server/ui/screen/home_screen.dart';
+import 'package:attendance_server/ui/screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 
-Logger logger =Logger();
+Logger logger = Logger();
 
 void main() {
   runApp(MultiProvider(
-    providers: [ChangeNotifierProvider(create: (_) => ServerProvider())],
+    providers: [
+      ChangeNotifierProvider(create: (_) => ServerProvider()),
+      ChangeNotifierProvider(create: (_) => TeacherProvider())
+    ],
     child: const MyApp(),
   ));
 }
@@ -23,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const SignupScreen(),
     );
   }
 }

@@ -4,10 +4,10 @@ class Student {
   final String name;
   final String deviceName;
 
-  Student._(this.id, this.ip, this.name, this.deviceName);
+  Student(this.id, this.ip, this.name, this.deviceName);
 
   factory Student.fromJson(Map<String, dynamic> json) =>
-      Student._(json['id'], json['ip'], json['name'], json['deviceName']);
+      Student(json['id'], json['ip'], json['name'], json['deviceName']);
 
   Map<String,dynamic> toJson(){
     return {
